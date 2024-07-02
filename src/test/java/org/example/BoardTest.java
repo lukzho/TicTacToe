@@ -16,12 +16,12 @@ class BoardTest {
 
     @Test
     void isCellEmpty_test_empty() {
-        assertTrue(board.isCellEmpty(1, 1));
+        assertTrue(board.isCellEmpty(1, 2));
     }
     @Test
     void isCellEmpty_test_full() {
-        board.cells[0][0]='X';
-        assertFalse(board.isCellEmpty(0, 0));
+        board.cells[0][1]='X';
+        assertFalse(board.isCellEmpty(0, 1));
     }
 
     @Test
