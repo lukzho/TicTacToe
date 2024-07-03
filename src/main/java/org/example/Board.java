@@ -1,5 +1,8 @@
 package org.example;
 
+import java.util.Arrays;
+import java.util.HashSet;
+
 public class Board {
 
     public char [][] cells;
@@ -47,6 +50,35 @@ public class Board {
             }
             System.out.println();
         }
+    }
+
+    public boolean hasEnded(){
+        if(cells[0][0]==cells[1][1] &&  cells[1][1]==cells[2][2] && cells[1][1]!=' '){
+            return true;
+        }
+        if(cells[2][0]==cells[1][1] &&  cells[1][1]==cells[0][2]&& cells[1][1]!=' '){
+            return true;
+        }
+        for(int i = 0; i<=2;i++){
+            if (cells[i][1]==cells[i][2] && cells[i][1]==cells[i][0] && cells[i][0]!=' '){
+                return true;
+            }
+            if (cells[1][i]==cells[2][i] && cells[1][i]==cells[0][i] && cells[1][i]!=' '){
+                return true;
+            }
+        }
+
+        return false;
+    }
+    public boolean isDraw(){
+        for(int i = 0; i<=2;i++){
+            for (int j = 0;j<=2;j++){
+                if(cells[i][j]==' ');{
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
 }
