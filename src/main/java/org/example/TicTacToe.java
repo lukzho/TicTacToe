@@ -21,6 +21,7 @@ public class TicTacToe {
         int col;
 
         while(true) {
+            displayBoard();
             System.out.printf("Current Player: %c\n",currentPlayer.getMarker());
             do {
                 System.out.print("row (0-2): ");
@@ -38,6 +39,18 @@ public class TicTacToe {
             }while(col>2 || col<0);
 
             board.place(row, col, currentPlayer.getMarker());
+
+            if (board.isDraw()){
+                displayBoard();
+                System.out.println("draw");
+                break;
+            }
+
+            if(board.hasEnded()){
+                displayBoard();
+                System.out.println(currentPlayer.getMarker() +" has won");
+                break;
+            }
 
             currentPlayer = currentPlayer==player1 ? player2 : player1;
         }
