@@ -43,6 +43,13 @@ public class TicTacToe {
         }
         //sc.close();
     }
+    public void displayBoard() {
+        board.displayBoard();
+    }
+    public boolean isGameOver() {
+        return false;
+    }
+
 
 
 }

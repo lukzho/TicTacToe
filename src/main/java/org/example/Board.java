@@ -40,4 +40,13 @@ public class Board {
         return true;}
     public void clear() {
     }
+    public void displayBoard() {
+        for (int i = 0; i < cells.length; i++) {
+            for (int j = 0; j < cells[i].length; j++) {
+                System.out.print(cells[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
 }
