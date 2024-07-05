@@ -1,0 +1,84 @@
+package org.example;
+
+import java.util.Arrays;
+import java.util.HashSet;
+
+public class Board {
+
+    public char [][] cells;
+
+    public Board(){
+        cells = new char[3][3];
+        for(int i = 0; i < cells.length;i++){
+            for(int j = 0; j < cells[i].length;j++){
+                cells[i][j] = ' ';
+            }
+            System.out.print("\n");
+        }
+    };
+
+    public boolean isCellEmpty(int x, int y){
+        if(x>=0 && x <3 && y >=0 && y<3){
+            if (cells[x][y]==' ')
+                return true;
+            else
+                return false;
+        }
+        return false;
+
+    }
+    public void place(int x, int y, char marker){
+        if(isCellEmpty(x,y)){
+            cells[x][y] = marker;
+        }
+    }
+    public void print() {
+    }
+    public String getBoardForPrint() {
+        return null;}
+
+    public char getCell(int r, int c){
+        return ' ';}
+    public boolean isFull(){
+        return true;}
+    public void clear() {
+    }
+    public void displayBoard() {
+        for (int i = 0; i < cells.length; i++) {
+            for (int j = 0; j < cells[i].length; j++) {
+                System.out.print(cells[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public boolean hasEnded(){
+        if(cells[0][0]==cells[1][1] &&  cells[1][1]==cells[2][2] && cells[1][1]!=' '){
+            return true;
+        }
+        if(cells[2][0]==cells[1][1] &&  cells[1][1]==cells[0][2]&& cells[1][1]!=' '){
+            return true;
+        }
+        for(int i = 0; i<=2;i++){
+            if (cells[i][1]==cells[i][2] && cells[i][1]==cells[i][0] && cells[i][0]!=' '){
+                return true;
+            }
+            if (cells[1][i]==cells[2][i] && cells[1][i]==cells[0][i] && cells[1][i]!=' '){
+                return true;
+            }
+        }
+
+        return false;
+    }
+    public boolean isDraw(){
+        for(int i = 0; i<=2;i++){
+            for (int j = 0;j<=2;j++){
+                if(cells[i][j]==' ');{
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+}
