@@ -11,7 +11,7 @@ public class TicTacToe {
     public TicTacToe(){
         board = new Board();
         player1 = new Player('X');
-        player2 = new Player('O');
+        player2 = new Player('0');
         currentPlayer = player2;
     }
 

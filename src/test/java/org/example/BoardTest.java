@@ -41,35 +41,35 @@ class BoardTest {
         board.cells[0][0]='X';
         board.cells[1][1]='X';
         board.cells[2][2]='X';
-        assertTrue(board.hasEnded());
+        assertTrue(board.hasWinner());
         board.cells[0][0]='X';
         board.cells[0][1]='X';
         board.cells[0][2]='X';
-        assertTrue(board.hasEnded());
+        assertTrue(board.hasWinner());
         board.cells[1][0]='X';
         board.cells[1][1]='X';
         board.cells[1][2]='X';
-        assertTrue(board.hasEnded());
+        assertTrue(board.hasWinner());
         board.cells[2][0]='X';
         board.cells[2][1]='X';
         board.cells[2][2]='X';
-        assertTrue(board.hasEnded());
+        assertTrue(board.hasWinner());
         board.cells[0][0]='X';
         board.cells[1][0]='X';
         board.cells[2][0]='X';
-        assertTrue(board.hasEnded());
+        assertTrue(board.hasWinner());
         board.cells[0][1]='X';
         board.cells[1][1]='X';
         board.cells[2][1]='X';
-        assertTrue(board.hasEnded());
+        assertTrue(board.hasWinner());
         board.cells[0][2]='X';
         board.cells[1][2]='X';
         board.cells[2][2]='X';
-        assertTrue(board.hasEnded());
+        assertTrue(board.hasWinner());
         board.cells[0][2]='X';
         board.cells[1][1]='X';
         board.cells[2][0]='X';
-        assertTrue(board.hasEnded());
+        assertTrue(board.hasWinner());
     }
 
 
