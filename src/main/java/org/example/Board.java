@@ -35,7 +35,8 @@ public class Board {
             System.out.println("----------------");
         }
     }
-
+    public String getBoardForPrint() {
+        return null;}
 
     public char getCell(int r, int c) {
         if (r >= 0 && r < 3 && c >= 0 && c < 3) {
