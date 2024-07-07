@@ -1,12 +1,12 @@
-name: Feature Branch test
+name: Main Branch Deploy
 
 on:
   push:
     branches:
-      - feature/**
+      - main
 
 jobs:
-  build-and-test:
+  deploy:
 
     runs-on: ubuntu-latest
 
@@ -16,4 +16,8 @@ jobs:
         with:
           java-version: 20
           distribution: temurin
-      - run: mvn test --file pom.xml
+      - run: mvn package --file pom.xml
+      - uses: actions/upload-artifact@v4
+        with:
+          name: deploy_file
+          path: target/**.jar
